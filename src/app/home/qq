@@ -1,0 +1,18 @@
+   <  select [(ngModel)]="ageFilter"  >
+        <  option value="New Born">New Born</  option>
+      <  option value="2-5">2-5 Years</  option>
+      <  option value="5-10">5-10 Years</  option>
+      <  option value="10-15">10-15 Years</  option>
+      <  option value="15-20">15-20 Years</  option>
+      <  option value="20-25">20-25 Years</  option>
+      <  option value="25-30">25-30 Years</  option>
+      <  option value="30-35">30-35 Years</  option>
+      <  option value="35-40">35-40 Years</  option>
+      <  option value="40-45">40-45 Years</  option>
+      <  option value="45-50">45-50 Years</  option>
+      <  option value="50-55">50-55 Years</  option>
+      <  option value="55-60">55-60 Years</  option>
+      <  option value="60-65">60-65 Years</  option>
+      <  option value="65-70">65-70 Years</  option>
+      <  option value="70 and above">70 and above Years</  option>
+    </  select>

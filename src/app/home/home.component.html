@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
+</head>
+
+<body>
+
+  <button (click)="logout()" style="float:right" class="col-sm-4 btn btn-default btn_table">LOGOUT</button>
+  <div class="row">
+    <div class="col-sm-8 form-group">
+      <label for="search"> Search</label>
+      <input type="text" [(ngModel)]="search" name="search" (ngModelChange)="Search($event)" id="myInput" class="form-control">
+
+
+
+    </div>
+  </div>
+  <!-- <button (click)="logout()">LOGOUT</button>
+
+
+<input type="text" [(ngModel)]="search"  (ngModelChange)="Search($event)" id="myInput"> -->
+
+
+  <form *ngIf="show;">
+    <input type="hidden" [(ngModel)]="id" name="id" placeholder="">
+    <input type="hidden" [(ngModel)]="images" name="images" placeholder="">
+
+
+    <div class="row">
+      <div class="col-sm-3 form-group">
+        <label for="Name"> Name</label>
+        <input class="form-control" type="text" [(ngModel)]="pName" name="pName" placeholder="">
+      </div>
+      <div class="col-sm-3 form-group">
+        <label for="pNic">Nick Name</label>
+        <input class="form-control" type="text" [(ngModel)]="pNic" placeholder="" name="pNic">
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="pLang">Language</label>
+        <input class="form-control" type="text" [(ngModel)]="pLang" placeholder="" name="pLang">
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="pFname">Father Name </label>
+        <input class="form-control" type="text" [(ngModel)]="pFname" placeholder="" name="pFname">
+      </div>
+
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-sm-3 form-group">
+        <label for="pMname	">Mother Name </label>
+        <input class="form-control" type="text" [(ngModel)]="pMname" placeholder="" name="pMname">
+      </div>
+      <div class="col-sm-3 form-group">
+        <label for="pLoc">Missing Location</label>
+        <input class="form-control" type="text" [(ngModel)]="pLoc" placeholder="" name="pLoc">
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="pNation">Nationality</label>
+        <input class="form-control" type="text" [(ngModel)]="pNation" placeholder="" name="pNation">
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="pMissdate">Missing Since</label>
+        <input class="form-control" type="text" [(ngModel)]="pMissdate" placeholder="" name="pMissdate">
+      </div>
+
+    </div>
+
+
+
+
+
+    <!-- <label for="Name">Name</label>
+<input type="text"[(ngModel)]="pName" name="pName" placeholder="">
+
+<label for="pNic">Nick Name</label>
+<input type="text"[(ngModel)]="pNic" placeholder="" name="pNic"> -->
+
+
+    <div class="row">
+
+      <div class="col-sm-3 form-group">
+        <label for="pMail	">Mail Id </label>
+        <input type="text" [(ngModel)]="pMail" placeholder="" name="pMail" class="form-control">
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="pMob1	">Mobile 1 </label>
+        <input type="text" [(ngModel)]="pMob1" placeholder="" name="pMob1" class="form-control">
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="pMob2">Mobile 2</label>
+        <input type="text" [(ngModel)]="pMob2" placeholder="" name="pMob2" class="form-control">
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="pBodycolor">Body Color</label>
+        <input type="text" [(ngModel)]="pBodycolor" placeholder="" name="pBodycolor" class="form-control">
+      </div>
+
+
+
+    </div>
+
+
+
+    <div class="row">
+
+      <div class="col-sm-3 form-group">
+        <label for="faceShape">Face Shape</label>
+        <!-- <input type="text"[(ngModel)]="faceShape" placeholder="" name="faceShape"> -->
+
+        <select [(ngModel)]="faceShape" name="faceShape" class="form-control">
+          <option value="Long">Long</option>
+          <option value="Oval">Oval</option>
+          <option value="Square">Square</option>
+          <option value="Wrinkled">Wrinkled</option>
+          <option value="other">other</option>
+
+
+        </select>
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="age">Age Approx</label>
+        <!-- <input type="text"[(ngModel)]="age" placeholder="" name="age"> -->
+
+        <select [(ngModel)]="age" name="age" class="form-control">
+          <option value="New Born">New Born</ option>
+            <option value="2-5 Years">2-5 Years</ option>
+              <option value="5-10 Years">5-10 Years</ option>
+                <option value="10-15 Years">10-15 Years</ option>
+                  <option value="15-20 Years">15-20 Years</ option>
+                    <option value="20-25 Years">20-25 Years</ option>
+                      <option value="25-30 Years">25-30 Years</ option>
+                        <option value="30-35 Years">30-35 Years</ option>
+                          <option value="35-40 Years">35-40 Years</ option>
+                            <option value="40-45 Years">40-45 Years</ option>
+                              <option value="45-50 Years">45-50 Years</ option>
+                                <option value="50-55 Years">50-55 Years</ option>
+                                  <option value="55-60 Years">55-60 Years</ option>
+                                    <option value="60-65 Years">60-65 Years</ option>
+                                      <option value="65-70 Years">65-70 Years</ option>
+                                        <option value="70 and above">70 and above Years</ option>
+        </select>
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="height">Height Approx</label>
+        <!-- <input type="text"[(ngModel)]="height" placeholder="" name="height"> -->
+
+        <select [(ngModel)]="height" name="height" class="form-control">
+          <option value="2-3 ft">2-3 ft.</option>
+          <option value="3-4 ft">3-4 ft.</option>
+          <option value="4-5 ft">4-5 ft.</option>
+          <option value="5-6 ft">5-6 ft.</option>
+          <option value="6-Above ft">6-Above ft.</option>
+
+        </select>
+      </div>
+
+      <div class="col-sm-3 form-group">
+
+        <label for="eyeColor">Eye Color</label>
+        <!-- <input type="text"[(ngModel)]="eyeColor" placeholder="" name="eyeColor"> -->
+
+        <select [(ngModel)]="eyeColor" name="eyeColor" class="form-control">
+          <option value="Blue">Blue</option>
+          <option value="Brown">Brown</option>
+          <option value="Normal">Normal</option>
+          <option value="Reddish">Reddish</option>
+          <option value="Slit">Slit</option>
+
+        </select>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+
+      <div class="col-sm-3 form-group">
+        <label for="hairType">Hair Type</label>
+        <!-- <input type="text"[(ngModel)]="hairType" placeholder="" name="hairType"> -->
+
+
+        <select [(ngModel)]="hairType" name="hairType" class="form-control">
+          <option value="Curly">Curly</option>
+          <option value="Long">Long</option>
+          <option value="Normal">Normal</option>
+          <option value="Straight Hair">Straight Hair</option>
+
+
+        </select>
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="hairColor">Hair Color</label>
+        <!-- <input type="text"[(ngModel)]="hairColor" placeholder="" name="hairColor"> -->
+        <select [(ngModel)]="hairColor" name="hairColor" class="form-control">
+          <option value="Black">Black</option>
+          <option value="Brown">Brown</option>
+          <option value="Gray">Gray</option>
+          <option value="White">White</option>
+
+
+        </select>
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="pBodytype">Body Type</label>
+        <input type="text" [(ngModel)]="pBodytype" placeholder="" name="pBodytype" class="form-control">
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <label for="pMoreinfo">More Info</label>
+        <input type="text" [(ngModel)]="pMoreinfo" placeholder="" name="pMoreinfo" class="form-control">
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="row">
+
+      <div class="col-sm-3 form-group">
+        <label for="pContactinfo">Your Info</label>
+        <input type="text" [(ngModel)]="pContactinfo" placeholder="" name="pContactinfo" class="form-control">
+      </div>
+      <div class="col-sm-3 form-group">
+        <label for="gender">Gender</label>
+
+        <select [(ngModel)]="gender" name="gender" class="form-control">
+
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+
+        </select>
+      </div>
+
+      <div class="col-sm-3 form-group">
+        <button (click)="postedit()" class="btn btn-default editbtn">Save Changes</button>
+
+      </div>
+
+
+      <div class="col-sm-3 form-group">
+        <button (click)="cancelEdit()" class="btn btn-default editbtn">Cancel</button>
+
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="col-sm-12 form-group">
+        <button (click)="postedit()" class="btn btn-default ">Save Changes</button>
+        <button (click)="cancelEdit()" class="btn btn-default">Cancel</button>
+
+      </div>
+
+      
+      
+
+    </div> -->
+
+
+
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <label for="pstatus">Status</label> -->
+
+  <!-- <select [(ngModel)]="pstatus"  name="pstatus">
+    
+    <option value="ACTIVE">ACTIVE</option>
+    <option value="INACTIVE">INACTIVE</option>
+    
+  </select> -->
+
+  <!-- <select [(ngModel)]="pstatus"  name="pstatus">
+    
+      <option value="ACTIVE">ACTIVE</option>
+      <option value="INACTIVE">INACTIVE</option>
+      
+    </select> -->
+
+
+
+
+
+
+  <table style="border:2px solid black" id="myTable">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Nick Name</th>
+        <th>Gender</th>
+        <th>Language</th>
+        <th>Father Name</th>
+        <th>Mother Name</th>
+        <th>Nationality</th>
+        <th>Missing Location</th>
+        <th>Missing Since</th>
+        <th>Mail Id</th>
+        <th>Mobile 1</th>
+        <th>Mobile 2</th>
+        <th>Body Color</th>
+        <th>Face Shape</th>
+        <th>Age Approx</th>
+        <th>Height Approx</th>
+        <th>Eye Color</th>
+        <th>Hair Type</th>
+        <th>Hair Color</th>
+        <th>Body Type</th>
+        <th>More Info</th>
+        <th>Your Info</th>
+        <th>Status</th>
+        <th colspan="3" align="center">Options</th>
+
+      </tr>
+    </thead>
+    <!-- *ngFor="let item of items; index as i; trackBy: trackByFn" | paginate: { itemsPerPage: 5, currentPage: p };-->
+    <tbody>
+      <tr *ngFor="let data of listdata; let i = index">
+        <td>{{data.ID}}</td>
+        <td>
+          <!-- "../../assets/images/img_avatar2.png" [hidden]="!loaded" -->
+          <!-- <img src="{{imageUrl+data.IMAGE}}" style="width:85px;"> -->
+          <img src="../../assets/images/empty-image.png" (load)="loaded = false" [hidden]="loaded" style="width:85px;">
+          <img src="{{imageUrl+data.IMAGE}}" (load)="loaded = true" alt="" style="width:85px;">
+        </td>
+        <td>{{data.NAME == "undefined" ? "Not Available":data.NAME == "" ? "Not Available":data.NAME == "null" ? "Not Available":data.NAME}}</td>
+        <td>{{data.NICKNAME == "undefined" ? "Not Available":data.NICKNAME == "" ? "Not Available":data.NICKNAME == "null" ?
+          "Not Available":data.NICKNAME}}</td>
+        <td>{{data.GENDER == "undefined" ? "Not Available":data.GENDER == "" ? "Not Available":data.GENDER == "null" ? "Not Available":data.GENDER}}</td>
+        <td>{{data.LANGUAGE == "undefined" ? "Not Available":data.LANGUAGE == "" ? "Not Available":data.LANGUAGE == "null" ?
+          "Not Available":data.LANGUAGE}}</td>
+        <td>{{data.FATHERNAME == "undefined" ? "Not Available":data.FATHERNAME == "" ? "Not Available":data.FATHERNAME == "null"
+          ? "Not Available":data.FATHERNAME}}</td>
+        <td>{{data.MOTHERNAME == "undefined" ? "Not Available":data.MOTHERNAME == "" ? "Not Available":data.MOTHERNAME == "null"
+          ? "Not Available":data.MOTHERNAME}}</td>
+        <td>{{data.NATIONALITY == "undefined" ? "Not Available":data.NATIONALITY == "" ? "Not Available":data.NATIONALITY ==
+          "null" ? "Not Available":data.NATIONALITY}}</td>
+
+        <td>{{data.MISSINGLOCATION == "undefined" ? "Not Available":data.MISSINGLOCATION == "" ? "Not Available":data.MISSINGLOCATION
+          == "null" ? "Not Available":data.MISSINGLOCATION}}</td>
+        <td>{{data.MISSINGSINCE == "undefined" ? "Not Available":data.MISSINGSINCE == "" ? "Not Available":data.MISSINGSINCE
+          == "null" ? "Not Available":data.MISSINGSINCE == "undefined" ? "Not Available":data.MISSINGSINCE == "" ? "Not Available":data.MISSINGSINCE
+          == "null" ? "Not Available":data.MISSINGSINCE}}</td>
+        <td>{{data.MAILID == "undefined" ? "Not Available":data.MAILID == "" ? "Not Available":data.MAILID == "null" ? "Not Available":data.MAILID}}</td>
+        <td>{{data.MOBILE1 == "undefined" ? "Not Available":data.MOBILE1 == "" ? "Not Available":data.MOBILE1 == "null" ? "Not
+          Available":data.MOBILE1}}</td>
+        <td>{{data.MOBILE2 == "undefined" ? "Not Available":data.MOBILE2 == "" ? "Not Available":data.MOBILE2 == "null" ? "Not
+          Available":data.MOBILE2}}</td>
+        <td>{{data.BODYCOLOR == "undefined" ? "Not Available":data.BODYCOLOR == "" ? "Not Available":data.BODYCOLOR == "null"
+          ? "Not Available":data.BODYCOLOR}}</td>
+        <td>{{data.FACESHAPE == "undefined" ? "Not Available":data.FACESHAPE == "" ? "Not Available":data.FACESHAPE == "null"
+          ? "Not Available":data.FACESHAPE}}</td>
+        <td>{{data.AGEAPPROX == "undefined" ? "Not Available":data.AGEAPPROX == "" ? "Not Available":data.AGEAPPROX == "null"
+          ? "Not Available":data.AGEAPPROX}}</td>
+        <td>{{data.HEIGHTAPPROX == "undefined" ? "Not Available":data.HEIGHTAPPROX == "" ? "Not Available":data.HEIGHTAPPROX
+          == "null" ? "Not Available":data.HEIGHTAPPROX}}</td>
+        <td>{{data.EYECOLOR == "undefined" ? "Not Available":data.EYECOLOR == "" ? "Not Available":data.EYECOLOR == "null" ?
+          "Not Available":data.EYECOLOR}}</td>
+        <td>{{data.HAIRTYPE == "undefined" ? "Not Available":data.HAIRTYPE == "" ? "Not Available":data.HAIRTYPE == "null" ?
+          "Not Available":data.HAIRTYPE}}</td>
+        <td>{{data.HAIRCOLOR == "undefined" ? "Not Available":data.HAIRCOLOR == "" ? "Not Available":data.HAIRCOLOR == "null"
+          ? "Not Available":data.HAIRCOLOR}}</td>
+        <td>{{data.BODYTYPE == "undefined" ? "Not Available":data.BODYTYPE == "" ? "Not Available":data.BODYTYPE == "null" ?
+          "Not Available":data.BODYTYPE}}</td>
+        <td>{{data.MOREINFO == "undefined" ? "Not Available":data.MOREINFO == "" ? "Not Available":data.MOREINFO == "null" ?
+          "Not Available":data.MOREINFO}}</td>
+        <td>{{data.YOURINFO == "undefined" ? "Not Available":data.YOURINFO == "" ? "Not Available":data.YOURINFO == "null" ?
+          "Not Available":data.YOURINFO}}</td>
+        <td>{{data.STATUS}}</td>
+        <td>
+          <button (click)=" updatestatus(data.ID,i)" class="btn btn-default btn_table">Active</button>
+        </td>
+        <td>
+          <button (click)=" deleterecord(data,i)" class="btn btn-default btn_table">Delete</button>
+        </td>
+        <td>
+          <button (click)=" edit(data,i)" class="btn btn-default btn_table">Edit</button>
+        </td>
+
+      </tr>
+
+    </tbody>
+
+
+
+
+
+  </table>
+
+  <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+</body>
+
+</html>
